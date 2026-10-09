@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>back2sender | Turn Airtime to Cash Instantly</title>
+    <!-- Custom Style Layer -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- Header / Brand -->
+    <header class="app-header">
+        <div class="limit-badge">
+            <span class="pulse-dot"></span>
+            <p class="badge-text">Universal Limit Active: <strong>Le 357 / Day</strong></p>
+        </div>
+        <h1 class="brand-logo">
+            back<span class="highlight">2</span>sender
+        </h1>
+        <p class="brand-tagline">Accidentally over-topped up? Cash out immediately.</p>
+    </header>
+
+    <!-- Main Card Container -->
+    <main class="main-card">
+        
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button class="tab-btn active">
+                <i class="fa-solid fa-arrow-right-arrow-left"></i> Convert
+            </button>
+            <button class="tab-btn disabled" disabled>
+                <i class="fa-solid fa-clock-rotate-left"></i> History
+            </button>
+        </div>
+
+        <!-- Conversion Form -->
+        <form id="conversionForm">
+            
+            <!-- Network Selection -->
+            <div class="form-group">
+                <label class="input-label">Select Network</label>
+                <div class="network-grid">
+                    <label class="network-option selected">
+                        <input type="radio" name="network" value="orange" checked class="radio-input">
+                        <span class="network-name orange-text">Orange</span>
+                        <span class="network-meta">Instant SMS OTP</span>
+                    </label>
+                    <label class="network-option">
+                        <input type="radio" name="network" value="afrimoney" class="radio-input">
+                        <span class="network-name red-text">Afrimoney</span>
+                        <span class="network-meta">Instant SMS OTP</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Phone Input -->
+            <div class="form-group">
+                <label for="phone" class="input-label">Your Mobile Number</label>
+                <div class="input-wrapper prefix-wrapper">
+                    <div class="input-prefix">+232</div>
+                    <input type="tel" id="phone" required placeholder="77 000000" class="form-input custom-tel">
+                </div>
+            </div>
+
+            <!-- Amount Input Box -->
+            <div class="form-group">
+                <div class="label-row">
+                    <label for="amount" class="input-label">Airtime Amount to Liquidate</label>
+                    <span class="limit-pill">Max Le 357/day</span>
+                </div>
+                <div class="input-wrapper suffix-wrapper">
+                    <input type="number" id="amount" required step="0.01" min="1" max="500" placeholder="0.00" class="form-input amount-input">
+                    <div class="input-suffix">Le</div>
+                </div>
+            </div>
+
+            <!-- Interactive Conversion Ledger Breakdown -->
+            <div class="ledger-box">
+                <div class="ledger-row">
+                    <span>Processing Fee (15%)</span>
+                    <span id="feeDisplay" class="ledger-value">Le 0.00</span>
+                </div>
+                <hr class="ledger-divider">
+                <div class="ledger-row total-row">
+                    <span class="total-label">Estimated Cash Payout</span>
+                    <span id="payoutDisplay" class="total-value">Le 0.00</span>
+                </div>
+            </div>
+
+            <!-- Submit Action -->
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-bolt-lightning"></i> Process Payout
+            </button>
+        </form>
+    </main>
+
+    <!-- Global Notification/Error Banner -->
+    <div id="errorModal" class="error-modal hidden">
+        <i class="fa-solid fa-circle-exclamation error-icon"></i>
+        <div class="error-content">
+            <h4 class="error-title">Security Guardrail Breach</h4>
+            <p id="errorText" class="error-description"></p>
+        </div>
+    </div>
+
+    <!-- Script Application Layer -->
+    <script src="app.js"></script>
+</body>
+</html>
